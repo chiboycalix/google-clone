@@ -1,0 +1,16 @@
+.home-wrapper{
+  height:100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content:space-between;
+  // align-items:space-between;
+
+  .content{
+    .btn-wrapper{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-top: 1rem;
+    }
+  }
+}
