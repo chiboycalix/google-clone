@@ -5,6 +5,11 @@ const instance = axios.create({
   timeout: 250000,
 });
 
+const suggesstInstance = axios.create({
+  baseURL: process.env.REACT_APP_SUGGEST_URL,
+  timeout: 250000,
+});
+
 instance.defaults.headers = {
   Accept: 'application/json',
   'Content-Type': 'application/json',
@@ -18,15 +23,12 @@ export const APIService = {
 
   post(endpoint:string, data: any) {
     return instance.post(endpoint, data);
-  },
-
-  delete(endpoint:string) {
-    return instance.delete(endpoint);
-  },
-
-  put(endpoint:string, data:any) {
-    return instance.put(endpoint, data);
-  },
+  }
 };
 
+export const SuggestAPIService = {
+  get(endpoint:string) {
+    return suggesstInstance.get(endpoint);
+  }
+};
 

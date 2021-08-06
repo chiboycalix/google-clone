@@ -4,6 +4,7 @@ import { GoogleText, Header, Footer, SearchInput, Button } from '../../component
 import './styles.scss';
 
 const Home = () => {
+  const handleSearch = () => {}
   return (
     <div className="home-wrapper">
       <div className="header">
@@ -11,7 +12,7 @@ const Home = () => {
       </div>
       <div className="content">
         <GoogleText />
-        <SearchInput />
+        <SearchInput handleSearch={handleSearch}/>
         <div className="btn-wrapper">
           <Button>Google search</Button>
           <Button>I'm Feeling Lucky</Button>

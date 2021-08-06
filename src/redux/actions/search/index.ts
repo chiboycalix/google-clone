@@ -11,7 +11,6 @@ export interface IReduxGetSearchAction extends IReduxBaseAction {
 export const getSearchResult = (): ThunkAction<Promise<IReduxGetSearchAction>, IReduxSearchState, undefined, IReduxGetSearchAction> => {
   return async (dispatch: ThunkDispatch<IReduxSearchState, undefined, IReduxGetSearchAction>) => {
     const searchResult = await APIService.get(`/search/q=elon+musk&num=100`);
-console.log({searchResult})
     return dispatch({
       type: EReduxActionTypes.GET_SEARCH_RESULTS,
       payload: searchResult.data
